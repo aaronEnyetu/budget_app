@@ -3,10 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Container from 'react-bootstrap/Container'
 import { Button, Stack } from 'react-bootstrap'
 import BudgetCard from './components/BudgetCard'
+import AddBudgetModal from './components/AddBudgetModal'
 
 
 function App() {
   return (
+    <>
     <Container className='my-4'>
       <Stack direction='horizontal' gap='2' className='mb-4'>
         <h1 className='me-auto'> Budgets</h1>
@@ -30,6 +32,8 @@ function App() {
 
       </div>
     </Container>
+    <AddBudgetModal show/>
+    </>
   );
 }
 
