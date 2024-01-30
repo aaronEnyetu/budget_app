@@ -1,31 +1,28 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Budget from "./components/Budget";
-import Remaining from "./components/Remaining";
-import ExpenseTotal from "./components/ExpenseTotal";
+import Container from 'react-bootstrap/Container'
+import { Button, Stack } from 'react-bootstrap'
+import BudgetCard from './components/BudgetCard'
+
 
 function App() {
   return (
-    <div className="container">
-      <h1 className="mt-3">
-        My Budget Planner
-      </h1>
-      <div className="row mt-3">
-        <div className="col-sm">
-          <Budget/>
-
-        </div>
-        <div className="col-sm">
-          <Remaining/>
-        </div>
-        <div className="col-sm">
-          <ExpenseTotal/>
-        </div>
+    <Container className='my-4'>
+      <Stack direction='horizontal' gap='2' className='mb-4'>
+        <h1 className='me-auto'> Budgets</h1>
+        <Button variant='primary'>Add Budget</Button>
+        <Button variant='outline-primary'>Add Expense</Button>
+      </Stack>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        gap: '1rem',
+        alignItems: 'flex-start',
+      }}>
+        <BudgetCard name='Entertainment' amount={200} max={1000}></BudgetCard>
 
       </div>
-
-      <h3 className="mt-3">Expenses</h3>
-    </div>
+    </Container>
   );
 }
 
