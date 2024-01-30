@@ -10,20 +10,6 @@ export function useBudgets() {
 
 }
 
-// {
-//     id:
-//     name:
-//     max
-// }
-
-// {
-//     id:
-//     budgetId:
-//     amount:
-//     description:
-// }
-
-
 export const BudgetsProvider = ({ children }) => {
 
     const [budgets, setBudgets]= useLocalStorage('budgets',[])
